@@ -7,6 +7,7 @@
     --light-color: #f9f7ef;
 }
 
+/* GENERAL RULES */
 *,
 *::after,
 *::before {
@@ -33,6 +34,8 @@ a {
 ul {
     list-style-type: none;
 }
+
+/* UTILITIES */
 
 /* MAIN HEADER SECTION*/
 
@@ -101,19 +104,19 @@ ul {
 .hero {
     position: relative;
     overflow: hidden;
-    background-image: url(https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80);
+    background-image: url(/images/hamburger-bg.jpg);
     background-size: cover;
-    height: 500px;
+    height: 30rem;
 
     display: grid;
     place-items: center;
 }
 
-.hero .container {
+.hero-container {
     max-width: 600px;
 }
 
-.hero .card {
+.hero-card {
     background-color: rgba(0, 0, 0, .6);
     border-radius: 1rem;
     box-shadow: 0 0 7px 2px var(--black-color)
@@ -122,24 +125,64 @@ ul {
 .hero-text {
     font-family: "Staatliches", cursive;
     font-size: 3rem;
+    font-weight: 700;
     text-align: center;
-    color: #f3f3f3;
+    color: var(--primary-color);
     padding: 0 1.5rem;
 }
 
-
-
-
-
-
-
+/* CARDAPIO */
 .cardapio {
-    flex-basis: 100%;
-    background: #333;
+    background: var(--primary-color);
+    height: 100%;  
 }
+
+.cardapio-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardapio-card {
+    flex-basis: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 1rem;
+    box-shadow: 0 0 9px 0px var(--black-color);
+    margin: 1rem;
+}
+
+.cardapio-card > *:first-child {
+    max-width: 400px ;
+    margin: 1rem;
+}
+
+.cardapio-card p {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+}
+
+.cardapio-card img {
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+}
+
+/* .img-mask {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+} */
+
+
 
 /* MEDIA QUERIES */
 
+/* Mobile ++ */
+@media (min-width: 500px) {}
 /* Tablets ++ */
 @media (min-width: 768px) {
     .header {
@@ -149,7 +192,8 @@ ul {
         height: 25vh;
     }
 
-    .header-nav-item {
-        padding: 1rem;
-    }
+    .cardapio-container {
+        flex-direction: row;
+        max-width: 80%;    
+    }    
 }
