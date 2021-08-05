@@ -27,6 +27,11 @@ img {
 
 a {
     text-decoration: none;
+    color: var(--light-color);
+}
+
+ul {
+    list-style-type: none;
 }
 
 /* MAIN HEADER SECTION*/
@@ -37,7 +42,7 @@ a {
     flex-direction: column;
     align-items: center;
     background: var(--shadow-color);
-    min-height: 100%;
+    height: 30vh;
     width: 100%;
 }
 
@@ -54,7 +59,7 @@ a {
 }
 
 .logo i {
-    color: var(--primary-color)
+    color: var(--primary-color);
 }
 
 .logo-txt {
@@ -67,19 +72,28 @@ a {
 /* navbar */
 
 .header-nav {
-    padding: 1rem;
-    padding-top: .5rem;
+    padding: .5rem;
+}
+
+.header-nav ul {
+    display: flex;
 }
 
 .header-nav-item {
     font-size: 1.1rem;
-    padding: .5rem;
-    color: var(--light-color);
 }
 
 .header-nav-item:hover {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.header-nav-item a {
+    display: inline-block;
+    padding: 1rem;
+}
+
+.header-nav-item a:hover {
     color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color)
 }
 
 /* HERO SECTION*/
@@ -87,31 +101,37 @@ a {
 .hero {
     position: relative;
     overflow: hidden;
+    background-image: url(https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80);
+    background-size: cover;
+    height: 500px;
+
+    display: grid;
+    place-items: center;
 }
 
-.hero-img {
-    margin: 0 auto;
-    object-fit: cover;
+.hero .container {
+    max-width: 600px;
 }
 
-.hero::before {
-    content: " ";
-    position: absolute;
-    background: #0a0a0a;
-    opacity: 95%;
-    width: 100%;
-    height: 100%;
+.hero .card {
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 1rem;
+    box-shadow: 0 0 7px 2px var(--black-color)
 }
 
 .hero-text {
-    position: absolute;
-    left: 20%;
-    top: 45%;
-
     font-family: "Staatliches", cursive;
     font-size: 3rem;
-    color: #f3f3f3
+    text-align: center;
+    color: #f3f3f3;
+    padding: 0 1.5rem;
 }
+
+
+
+
+
+
 
 .cardapio {
     flex-basis: 100%;
@@ -120,7 +140,7 @@ a {
 
 /* MEDIA QUERIES */
 
-/* Tablets and under */
+/* Tablets ++ */
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
@@ -130,6 +150,6 @@ a {
     }
 
     .header-nav-item {
-        padding: 0 1rem;
+        padding: 1rem;
     }
 }
